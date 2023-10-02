@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/*
+Paleta de cores
+Verde: #49a09d
+Lilás: #5f2c82
+*/
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    margin: 0px;
+    padding: 0px;
+
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #49a09d;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: relative; /* <--- Centralizar o conteúdo */
+    height: 100vh;
+    width: 100vw;    
+}
+
+section#login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    overflow: hidden;
+
+    /* Quando utilizamos o "postition" com o atributo "absolute", podemos utilizar as funções "top" e "left" trabalhando em conjunto. O problema aqui é que ao colocarmos os valores em porcentagens (%), é identificado como o "ponto zero", ou seja, o ponto referência da caixa, é sempre o superior a esquerda. então o alinhamento ao identificarmos o atributo de 50% e 50%, passamos a informação de que o ponto zero deverá se estabelecer ao centro da página. No caso de um retângulo, entendemos que o ponto superor a esquerda, estará centralizado ao meio da caixa. 
+
+    Para corrigirmos e colocarmos a caixa inteira ao centro, devemos utilizar a função "transform", que nos permite o atributo "translate" que atribui os valores a serem deslocados de acordo com o ponto zero. Colocando os valores de -50% e -50%, indicamos que o ponto zero, a partir do centro (por conta de top e left) deverá se deslocar -50% ao topo e -50% à esquerda, colocando assim a caixa centralizada ao tamanho da tela, independete de seu formato.
+
+    overflow: hidden; -> Tudo o que estiver fora da bora será "escondido". Em nosso exercício, ao inserir a imagem as bordas do topo ficaram retas ao invés de arredondadas. Acontece é que as bordas retas eram relacionadas à imagem e as arredondadas a caixa "section". Ao inserirmos o "overflow" com o valor "hidden", tudo o que se excede à borda é "escondida", respeitando a borda da caixa "mãe" (nesse caso 'section').
+
+
+
+    */
+
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+
+    transition: width .2s, height .2s;
+    /* Faz uma animação na transição de break point; */
+
+    transition-timing-function: ease; 
+    /* suaviza a animação. Não vai acelerar e desacelerar na mesma velocidade da animação */
+}
+
+section#login > div#imagem {
+    display: block;
+    background: #49a09d url(../imagens/abstract-2317099.jpg) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.379);
+    height: 250px;
+}
+
+section#login > div#formulario {
+    display: block;
+    padding: 10px;
+}
+
+div#formulario > h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario > p {
+    font-size: 0.8em;
+}
