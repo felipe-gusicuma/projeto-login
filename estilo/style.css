@@ -12,7 +12,7 @@ Lilás: #5f2c82
     margin: 0px;
     padding: 0px;
 
-    box-sizing: border-box;
+    box-sizing: border-box; /* Para considerar até a borda da caixa considerando o seu tamanho total */ 
 }
 
 body, html {
@@ -31,22 +31,19 @@ section#login{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%, -50%);
     overflow: hidden;
 
-    /* Quando utilizamos o "postition" com o atributo "absolute", podemos utilizar as funções "top" e "left" trabalhando em conjunto. O problema aqui é que ao colocarmos os valores em porcentagens (%), é identificado como o "ponto zero", ou seja, o ponto referência da caixa, é sempre o superior a esquerda. então o alinhamento ao identificarmos o atributo de 50% e 50%, passamos a informação de que o ponto zero deverá se estabelecer ao centro da página. No caso de um retângulo, entendemos que o ponto superor a esquerda, estará centralizado ao meio da caixa. 
+    /* 
+    Quando utilizamos o "postition" com o atributo "absolute", podemos utilizar as funções "top" e "left" trabalhando em conjunto. O problema aqui é que ao colocarmos os valores em porcentagens (%), é identificado como o "ponto zero", ou seja, o ponto referência da caixa, é sempre o superior a esquerda. então o alinhamento ao identificarmos o atributo de 50% e 50%, passamos a informação de que o ponto zero deverá se estabelecer ao centro da página. No caso de um retângulo, entendemos que o ponto superor a esquerda, estará centralizado ao meio da caixa. 
 
     Para corrigirmos e colocarmos a caixa inteira ao centro, devemos utilizar a função "transform", que nos permite o atributo "translate" que atribui os valores a serem deslocados de acordo com o ponto zero. Colocando os valores de -50% e -50%, indicamos que o ponto zero, a partir do centro (por conta de top e left) deverá se deslocar -50% ao topo e -50% à esquerda, colocando assim a caixa centralizada ao tamanho da tela, independete de seu formato.
 
     overflow: hidden; -> Tudo o que estiver fora da bora será "escondido". Em nosso exercício, ao inserir a imagem as bordas do topo ficaram retas ao invés de arredondadas. Acontece é que as bordas retas eram relacionadas à imagem e as arredondadas a caixa "section". Ao inserirmos o "overflow" com o valor "hidden", tudo o que se excede à borda é "escondida", respeitando a borda da caixa "mãe" (nesse caso 'section').
-
-
-
     */
 
     background-color: white;
     width: 250px;
-    height: 500px;
+    height: 557px;
     border-radius: 20px;
 
     transition: width .2s, height .2s;
@@ -54,6 +51,9 @@ section#login{
 
     transition-timing-function: ease; 
     /* suaviza a animação. Não vai acelerar e desacelerar na mesma velocidade da animação */
+    
+    transform:translate(-50%, -50%);
+
 }
 
 section#login > div#imagem {
@@ -62,7 +62,7 @@ section#login > div#imagem {
     background-size: cover;
     background-position: center bottom;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.379);
-    height: 250px;
+    height: 240px;
 }
 
 section#login > div#formulario {
@@ -76,5 +76,78 @@ div#formulario > h1 {
 }
 
 div#formulario > p {
+    font-size: 0.8em;
+}
+
+form > div.campo{
+    background-color: #49a09d;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #49a09d;
+    margin: 5px 0px;
+}
+
+div.campo > label{
+    display: none;
+}
+
+div.campo > i {
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input{
+    background-color: #7b39a7;
+    font-size: 1em;
+    width: calc(100% - 44px); /*Realiza o cálculo de acordo com as orientações. No caso, de 100% da largura da tela em questão é subtraído 44px; */
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-12px);
+
+    /* Sempre que ouver alguma tipo de transformação / translação (transform: translate, mantenha sempre suas configurações na ultima linha. Isso pode causar alguns erros de acordo com o seu navegador */
+}
+
+div.campo > input:focus-within{
+    background-color: white;
+    border: none;
+}
+
+form > input[type=submit] {
+    display: block;
+    font-size: 1em; 
+    width: 100%;
+    height: 40px;
+    background-color:#5f2c82;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form > input[type=submit]:hover{
+    background-color: #2e153f;
+}
+
+form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border:1px solid #2e153f;
+    border-radius: 7px;
+    text-decoration: none;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+
+form > a.botao > i {
     font-size: 0.8em;
 }
