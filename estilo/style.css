@@ -12,7 +12,7 @@ Lilás: #5f2c82
     margin: 0px;
     padding: 0px;
 
-    box-sizing: border-box; /* Para considerar até a borda da caixa considerando o seu tamanho total */ 
+    box-sizing: border-box; /* Para considerar até a borda da caixa em seu tamanho total */ 
 }
 
 body, html {
