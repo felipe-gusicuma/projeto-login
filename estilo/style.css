@@ -102,12 +102,12 @@ div.campo > i {
 div.campo > input{
     background-color: #7b39a7;
     font-size: 1em;
-    width: calc(100% - 44px); /*Realiza o cálculo de acordo com as orientações. No caso, de 100% da largura da tela em questão é subtraído 44px; */
+    width: calc(100% - 43px); /*Realiza o cálculo de acordo com as orientações. No caso, de 100% da largura da tela em questão é subtraído 44px; */
     height: 100%;
     border: 0px;
     border-radius: 8px;
-    padding: 4px;
-    transform: translateY(-12px);
+    padding: 2px;
+    transform: translateY(-21px);
 
     /* Sempre que ouver alguma tipo de transformação / translação (transform: translate, mantenha sempre suas configurações na ultima linha. Isso pode causar alguns erros de acordo com o seu navegador */
 }
